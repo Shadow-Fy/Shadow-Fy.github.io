@@ -1,0 +1,31 @@
+/* 文章页背景 */
+.layout_post>#post {
+
+    background: rgba(255,255,255,0.8);
+}
+
+/* 所有页面背景 */
+#recent-posts>.recent-post-item,.layout>div:first-child:not(.recent-posts),.layout_post>#page,.layout_post>#post,.read-mode .layout_post>#post{
+
+    background: rgba(255, 255, 255, 0.8);
+    
+}
+
+
+
+#web_bg{
+    background-image: url("https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202205121908138.jpg");
+}
+
+
+
+/* 鼠标样式 */
+body {
+    cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/default.cur),
+        default;
+}
+a,
+img {
+    cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/pointer.cur),
+        default;
+}

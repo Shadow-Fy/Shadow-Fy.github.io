@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>用 Hexo + gitub 搭建个人博客 | Shadow</title><meta name="author" content="Shadow-Fy"><meta name="copyright" content="Shadow-Fy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="用 Hexo + gitub 搭建个人博客1. 准备（此教程仅限于windows） 安装 Node.js 和 Git 。 Node.js（直接点击进入官网下载） Git （直接点击进入官网下载） 安装的时候都安装在D盘或者其他相同的盘，安装node.js时记得勾选Automatically install the necessary tools.其他的一直点击next就行了。 安装完成后，按WIn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用 Hexo + gitub 搭建个人博客">
+<meta property="og:url" content="http://example.com/2022/04/01/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="Shadow">
+<meta property="og:description" content="用 Hexo + gitub 搭建个人博客1. 准备（此教程仅限于windows） 安装 Node.js 和 Git 。 Node.js（直接点击进入官网下载） Git （直接点击进入官网下载） 安装的时候都安装在D盘或者其他相同的盘，安装node.js时记得勾选Automatically install the necessary tools.其他的一直点击next就行了。 安装完成后，按WIn">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202205121228093.jpg">
+<meta property="article:published_time" content="2022-04-01T15:13:55.000Z">
+<meta property="article:modified_time" content="2022-05-12T04:36:19.165Z">
+<meta property="article:author" content="Shadow-Fy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202205121228093.jpg"><link rel="shortcut icon" href="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202205121340572.jpg"><link rel="canonical" href="http://example.com/2022/04/01/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '用 Hexo + gitub 搭建个人博客',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-12 12:36:19'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/hexo-electric-clock@1.0.6/clock.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head><body><div id="loading-box"><style>css-doodle {--color: @p(#51eaea, #fffde1, #ff9d76, #FB3569);--rule: (:doodle {@grid: 30x1 / 18vmin;--deg: @p(-180deg, 180deg);}:container {perspective: 30vmin;}:after, :before {content: '';background: var(--color); @place-cell: @r(100%) @r(100%); @size: @r(6px); @shape: heart;} @place-cell: center; @size: 100%;box-shadow: @m2(0 0 50px var(--color));background: @m100(radial-gradient(var(--color) 50%, transparent 0)@r(-20%, 120%) @r(-20%, 100%) / 1px 1px no-repeat); will-change: transform, opacity; animation: scale-up 12s linear infinite; animation-delay: calc(-12s / @I * @i); @keyframes scale-up { 0%, 95.01%, 100% {transform: translateZ(0) rotate(0);opacity: 0;}10% {opacity: 1;}95% {transform: translateZ(35vmin) rotateZ(@var(--deg));}})}</style><css-doodle use="var(--rule)"></css-doodle><script async="async" src="https://npm.elemecdn.com/css-doodle@0.15.3/css-doodle.min.js"></script></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202205121340572.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 菜单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/butterfly%E4%B8%BB%E9%A2%98"><i class="fa-fw https://github.com/jerryc127/hexo-theme-butterfly/"></i><span> 0</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202205121228093.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Shadow</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 菜单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/butterfly%E4%B8%BB%E9%A2%98"><i class="fa-fw https://github.com/jerryc127/hexo-theme-butterfly/"></i><span> 0</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">用 Hexo + gitub 搭建个人博客</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-04-01T15:13:55.000Z" title="发表于 2022-04-01 23:13:55">2022-04-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-12T04:36:19.165Z" title="更新于 2022-05-12 12:36:19">2022-05-12</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="用 Hexo + gitub 搭建个人博客"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="用-Hexo-gitub-搭建个人博客"><a href="#用-Hexo-gitub-搭建个人博客" class="headerlink" title="用 Hexo + gitub 搭建个人博客"></a>用 Hexo + gitub 搭建个人博客</h1><h2 id="1-准备"><a href="#1-准备" class="headerlink" title="1. 准备"></a>1. 准备</h2><p><em><u><strong>（此教程仅限于windows）</strong></u></em></p>
+<p>安装 Node.js 和 Git 。</p>
+<p><a target="_blank" rel="noopener" href="https://nodejs.org/">Node.js</a>（直接点击进入官网下载）</p>
+<p><a target="_blank" rel="noopener" href="https://git-scm.com/downloads">Git </a>（直接点击进入官网下载）</p>
+<p>安装的时候<strong>都安装在D盘或者其他相同的盘</strong>，安装node.js时记得勾选<code>Automatically install the necessary tools.</code>其他的一直点击next就行了。</p>
+<p>安装完成后，按WIn+R输入cmd并打开，输入<code>node -v </code>回车，如果显示版本号则安装成功，同上输入<code>npm -v</code>，<code>git --version </code>看是否显示版本号。</p>
+<h2 id="2-连接Github"><a href="#2-连接Github" class="headerlink" title="2.连接Github"></a>2.连接Github</h2><p>使用邮箱注册 <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a> 账户（用户名不要随便创建，<strong>尽量带_或-等特殊符号</strong>，方便后面创建仓库），选择免费账户（Free），并完成邮件验证，不会可以去b站搜索，Github因为是国外的，不爬梯子（vpn）会很慢，只有等等，最好是去接或者买个vpn，后面都会用到的，不然会很难受。（Github账号密码记着）</p>
+<p>在<strong>刚刚安装了Git和Node.js的磁盘（刚刚说的    D盘）</strong>新建一个文件夹随便命名如 Hexo-Blog（用来存放 Hexo 的程序文件）。</p>
+<p>打开该文件夹，右键 -&gt; Git Bash Here。<strong>设置用户名和邮箱</strong>，分别输入下面的代码并且回车，<strong>用户名填刚刚创建Github的用户名，邮箱也是</strong>。</p>
+<hr>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;GitHub 用户名&quot;</span><br><span class="line">git config --global user.email &quot;GitHub 邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+<p>千万不要输错</p>
+<p>千万不要输错</p>
+<p>千万不要输错</p>
+<p><strong>创建SSH密钥：</strong></p>
+<p>输入 <code>ssh-keygen -t rsa -C &quot;GitHub 邮箱&quot;</code>，然后一路回车。</p>
+<p>千万不要输错</p>
+<p>千万不要输错</p>
+<p>千万不要输错</p>
+<p><strong>添加密匙：</strong></p>
+<p>进入 [C:\Users\用户名.ssh] 目录（要勾选显示“隐藏的项目”），用记事本打开<code>id_rsa.pub</code> 文件并复制里面的内容。</p>
+<p>登陆 GitHub ，主页右上角头像进入 Settings 页面，选择左边栏的 SSH and GPG keys，点击 New SSH key。</p>
+<p>Title 随便取个名字，粘贴刚刚复制的 id_rsa.pub 内容到 Key 中，点击 Add SSH key 完成添加。</p>
+<p><strong>验证连接：</strong></p>
+<p>打开 Git Bash，输入 <code>ssh -T git@github.com</code> 出现 “Are you sure……”，输入 yes 回车确认。最后显示<code> “Hi xxx! You&#39;ve successfully……”</code> 即连接成功。</p>
+<p>弄完了Git Bash不用关</p>
+<h2 id="3-创建-Github-Pages-仓库"><a href="#3-创建-Github-Pages-仓库" class="headerlink" title="3.创建 Github Pages 仓库"></a>3.创建 Github Pages 仓库</h2><p>GitHub 主页右上角加号 -&gt; New repository：</p>
+<ul>
+<li><p>点击绿色的new创建仓库</p>
+</li>
+<li><p>Repository name 中输入 <code>用户名.github.io</code><strong>（github.io一定要输入）</strong>（用户名一定要和你最上面创建Github账户的用户名一样，如果发现被重名了只有重新更改之前的Github用户名直到不会重名，更改方法去查）</p>
+</li>
+<li><p>Description 选填</p>
+</li>
+<li><p>选public</p>
+</li>
+<li><p>选Add a REDEME file</p>
+</li>
+</ul>
+<p>填好后点击 Create repository 创建。</p>
+<h2 id="4-本地安装-Hexo-博客程序"><a href="#4-本地安装-Hexo-博客程序" class="headerlink" title="4.本地安装 Hexo 博客程序"></a>4.本地安装 Hexo 博客程序</h2><p>点开刚刚创建的文件夹如 Hexo-Blog，右键 -&gt; Git Bash Here（如果刚刚没有关闭就不需要这一步）</p>
+<p>有vpn的话输入<code>npm install -g hexo-cli</code>安装Hexo。</p>
+<p>如果没有vpn的话输入这个<code>npm install -g hexo-cli --registry https://registry.npm.taobao.org </code>会安装的快些，这个是用了淘宝镜像。</p>
+<p>安装完后依次输入下面的指令并且回车</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init      # 初始化</span><br><span class="line">npm install    # 安装组件</span><br><span class="line">hexo g   # 生成页面 之后会经常用</span><br><span class="line">hexo s   # 启动预览 测试的时候会经常用</span><br></pre></td></tr></table></figure>
+
+<p><code>hexo s</code>之后会显示<code>http://localhost:4000</code>这串，浏览器访问这个地址，出现 Hexo 默认页面，本地博客安装成功！但是还没有搭好，现在只是个静态界面</p>
+<p>回到Git <strong>Ctrl+C</strong> 关闭服务器</p>
+<h2 id="5-部署-Hexo-到-GitHub-Pages"><a href="#5-部署-Hexo-到-GitHub-Pages" class="headerlink" title="5.部署 Hexo 到 GitHub Pages"></a>5.部署 Hexo 到 GitHub Pages</h2><p>本地博客测试成功后，就是上传到 GitHub 进行部署，使其能够在网络上访问。</p>
+<p>首先在Git上面<strong>安装 hexo-deployer-git</strong>：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在你的Hexo-Blog文件夹中找到**_config.yml** 文件，右键用记事本打开，翻到最下面文件末尾的 Deployment 部分，修改成如下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository:(空格)①</span><br><span class="line">  branch:(空格)②</span><br></pre></td></tr></table></figure>
+
+<p>①要换成你的github仓库地址，打开你刚刚创建Github仓库，点击绿色的code，复制https那一串网址，填入①中</p>
+<p>②要看你刚刚绿色code左边的branch左边那个是什么，如果是main就输入main，是其他的就输入其他的</p>
+<p>完成后在Git上输入 <code>hexo d</code>回车 将网站上传部署到 GitHub Pages。</p>
+<p>如果报错了出现<code>error：spawn failed...</code></p>
+<ol>
+<li>在Hexo-Blog文件夹中删除<code>.deploy_git</code>文件夹;</li>
+<li>在Git中输入<code>git config --global core.autocrlf false</code></li>
+<li>然后，依次执行：<br><code>hexo clean</code><br><code>hexo g</code><br><code>hexo d</code></li>
+</ol>
+<p>基本上就完成了，</p>
+<p>完成！这时访问我们的 GitHub 域名 <code>https://用户名.github.io</code> 就可以看到 Hexo 网站了。（正常情况下打开后可能就是个仓库名称，因为主题有问题，所以要去安装主题）</p>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/themes/">Themes | Hexo</a>官方主题地址，选好后点开下面有教程</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Shadow-Fy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/04/01/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">http://example.com/2022/04/01/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Shadow</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202205121228093.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202205141524636.jpg" target="_blank"><img class="post-qr-code-img" src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202205141524636.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202205141524282.jpg" target="_blank"><img class="post-qr-code-img" src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202205141524282.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2022/04/01/hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/"><img class="prev-cover" src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202205121228085.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Hexo博客的主题</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202205121340572.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Shadow-Fy</div><div class="author-info__description">保持热爱，奔赴山海</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/"><i class="fab fa-github"></i><span>Just do it</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:3199236914@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">此博客内容全是博主在学习过程中整理出来的笔记，仅供参考，如果有不足的地方欢迎留言</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%A8-Hexo-gitub-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2"><span class="toc-number">1.</span> <span class="toc-text">用 Hexo + gitub 搭建个人博客</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%87%86%E5%A4%87"><span class="toc-number">1.1.</span> <span class="toc-text">1. 准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%BF%9E%E6%8E%A5Github"><span class="toc-number">1.2.</span> <span class="toc-text">2.连接Github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%88%9B%E5%BB%BA-Github-Pages-%E4%BB%93%E5%BA%93"><span class="toc-number">1.3.</span> <span class="toc-text">3.创建 Github Pages 仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85-Hexo-%E5%8D%9A%E5%AE%A2%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.4.</span> <span class="toc-text">4.本地安装 Hexo 博客程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E9%83%A8%E7%BD%B2-Hexo-%E5%88%B0-GitHub-Pages"><span class="toc-number">1.5.</span> <span class="toc-text">5.部署 Hexo 到 GitHub Pages</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/27/unity%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="unity设计模式"><img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202207071540786.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="unity设计模式"/></a><div class="content"><a class="title" href="/2022/05/27/unity%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="unity设计模式">unity设计模式</a><time datetime="2022-05-27T04:43:47.000Z" title="发表于 2022-05-27 12:43:47">2022-05-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/20/unity%E5%A4%9A%E5%AF%B9%E8%B1%A1%E6%B1%A0/" title="unity多对象池"><img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202205201821830.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="unity多对象池"/></a><div class="content"><a class="title" href="/2022/05/20/unity%E5%A4%9A%E5%AF%B9%E8%B1%A1%E6%B1%A0/" title="unity多对象池">unity多对象池</a><time datetime="2022-05-20T10:15:48.000Z" title="发表于 2022-05-20 18:15:48">2022-05-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/15/%E7%AE%97%E6%B3%95/" title="算法"><img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202205152306184.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法"/></a><div class="content"><a class="title" href="/2022/05/15/%E7%AE%97%E6%B3%95/" title="算法">算法</a><time datetime="2022-05-15T14:52:22.000Z" title="发表于 2022-05-15 22:52:22">2022-05-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/14/hexo%E5%9B%BE%E5%BA%8A/" title="hexo图床"><img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202205121320866.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo图床"/></a><div class="content"><a class="title" href="/2022/05/14/hexo%E5%9B%BE%E5%BA%8A/" title="hexo图床">hexo图床</a><time datetime="2022-05-14T07:04:18.000Z" title="发表于 2022-05-14 15:04:18">2022-05-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/09/unity%E4%BA%8B%E4%BB%B6/" title="unity事件"><img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202205121228096.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="unity事件"/></a><div class="content"><a class="title" href="/2022/05/09/unity%E4%BA%8B%E4%BB%B6/" title="unity事件">unity事件</a><time datetime="2022-05-09T10:45:28.000Z" title="发表于 2022-05-09 18:45:28">2022-05-09</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202205121228093.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2022 By Shadow-Fy</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">我永远在你身后，在你左右</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+setTimeout(function(){preloader.endLoading();}, 5000);
+document.getElementById('loading-box').addEventListener('click',()=> {preloader.endLoading()})
+//- window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'LQljhsOFO4WI1ADhjXkYtwYj-gzGzoHsz',
+      appKey: 'AOPKyLXIATCCvf8fR2icnBTO',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="true" data-text="有钱,开心,健康,幸福,平安,好运,满意,顺利,开心" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>function electric_clock_injector_config(){
+                var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+                var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img id="card-clock-loading" src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-clock/clock/images/weather/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading" class="entered loading"></div></div></div></div></div>';
+                console.log('已挂载electric_clock')
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementsByClassName('sticky_layout')[0] && (location.pathname ==='all'|| 'all' ==='all')){
+
+            electric_clock_injector_config()
+        } </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax  src="https://cdn.jsdelivr.net/gh/Zfour/hexo-electric-clock@1.0.6/clock.js"></script><!-- hexo injector body_end end --></body></html>
